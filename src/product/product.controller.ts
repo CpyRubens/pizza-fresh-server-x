@@ -21,7 +21,7 @@ export class ProductController {
 
   @Post()
   @ApiOperation({
-    summary: 'Criar produtu',
+    summary: 'Criar produto',
   })
   create(@Body() createProductDto: CreateProductDto) {
     return this.productService.create(createProductDto);
@@ -37,7 +37,7 @@ export class ProductController {
 
   @Get(':id')
   @ApiOperation({
-    summary: 'Visulizar um produtu',
+    summary: 'Visulizar um produto',
   })
   findOne(@Param('id') id: string) {
     return this.productService.findOne(id);
@@ -45,7 +45,7 @@ export class ProductController {
 
   @Patch(':id')
   @ApiOperation({
-    summary: 'Editar produtu',
+    summary: 'Editar produto',
   })
   update(@Param('id') id: string, @Body() updateProductDto: UpdateProductDto) {
     return this.productService.update(id, updateProductDto);
