@@ -10,8 +10,8 @@ import {
   Post,
 } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { CreateTableDto } from './dto/createTable.dto';
-import { updateTableDto } from './dto/updateTable.dto';
+import { CreateTableDto } from './dto/create-table.dto';
+import { updateTableDto } from './dto/update-table.dto';
 import { Table } from './entities/table.entity';
 import { TableService } from './table.service';
 
