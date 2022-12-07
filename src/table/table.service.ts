@@ -59,3 +59,4 @@ export class TableService {
     throw new UnprocessableEntityException(lastErrorLine || 'Some error occurred');
   }
 }
+
