@@ -4,14 +4,14 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 
-@ApiTags("User")
+@ApiTags("user")
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Post()
   @ApiOperation({
-    summary: 'Criar produto',
+    summary: 'Criar usuário',
   })
   create(@Body() createUserDto: CreateUserDto) {
     return this.userService.create(createUserDto);
@@ -19,7 +19,7 @@ export class UserController {
 
   @Get()
   @ApiOperation({
-    summary: 'Listar produtos',
+    summary: 'Listar usuários cadastrados ',
   })
   findAll() {
     return this.userService.findAll();
@@ -27,7 +27,7 @@ export class UserController {
 
   @Get(':id')
   @ApiOperation({
-    summary: 'Visulizar um produto por id',
+    summary: 'Visulizar um User por id',
   })
   findOne(@Param('id') id: string) {
     return this.userService.findOne(id);
@@ -35,7 +35,7 @@ export class UserController {
 
   @Patch(':id')
   @ApiOperation({
-    summary: 'Editar produto por id',
+    summary: 'Editar User por id',
   })
   update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.userService.update(id, updateUserDto);
@@ -44,7 +44,7 @@ export class UserController {
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
   @ApiOperation({
-    summary: 'Remover produto pelo ID',
+    summary: 'Deletar User pelo ID',
   })
   delete(@Param('id') id: string) {
      this.userService.delete(id);
